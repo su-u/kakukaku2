@@ -6,11 +6,13 @@ int main(void)
 	int ookii;
 	//ƒtƒ@ƒCƒ‹
 	FILE *fp;
-	if (fopen_s(&fp, "input.txt", "r") == NULL) {
+	errno_t error;
+	if (error = fopen_s(&fp, "input.txt", "r") == 0) {
 		fscanf_s(fp, "%d", &i_max);
 		for (i = 0; i < i_max; i++) {
-			for (j = 0; j < i+ 1; j++)
+			for (j = 0; j < i + 1; j++) {
 				fscanf_s(fp, "%d", &s[i][j]);
+			}
 		}
 		fclose(fp);
 	}
