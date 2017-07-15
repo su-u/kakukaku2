@@ -4,7 +4,7 @@ int main(void)
 	int s[100][100] = { 0 };
 	int i, j, i_max;
 	int ookii;
-	//ƒtƒ@ƒCƒ‹
+	//Æ’tÆ’@Æ’CÆ’â€¹
 	FILE *fp;
 	if (fopen_s(&fp, "input.txt", "r") == NULL) {
 		fscanf_s(fp, "%d", &i_max);
@@ -17,7 +17,6 @@ int main(void)
 
 	for (i = i_max - 1; i >= 0; i--) {
 		for (j = 0; j < i + 1 ; j++) {
-			//printf("%d,%d\n", s[i][j], s[i][j + 1]);
 			if (s[i + 1][j] >= s[i + 1][j + 1]) {
 				ookii = s[i + 1][j];
 			} else {
